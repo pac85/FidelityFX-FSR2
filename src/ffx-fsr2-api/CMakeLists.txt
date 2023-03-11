@@ -46,6 +46,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR)
 	
 	if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR (NOT MSVC))
 		add_compile_definitions(FFX_GCC) # Should work with gcc and others
+    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 	endif()
 else()
     message(FATAL_ERROR "Unsupported target platform - only supporting x64 and Win32 currently")
